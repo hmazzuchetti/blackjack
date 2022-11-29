@@ -94,6 +94,9 @@ cardPick = () => {
         deck[cardIndex].amount -= 1;
         deckSize--;
         userHandArray.push(deck[cardIndex]);
+
+
+
         let handHasAce = false;
         userHandArray.forEach(card =>{
             if(card.name === "ace"){
@@ -102,7 +105,7 @@ cardPick = () => {
         })
         if(handHasAce){
             if(deck[cardIndex].name === "ace"){
-                if(userScore + deck[cardIndex].value > 21){
+                if(userScore < 10 || userScore + deck[cardIndex].value > 21){
                     console.log("Ace as 1 point");
                     userScore += 1;
                 }
